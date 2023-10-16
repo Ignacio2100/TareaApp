@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TareaApp.Views.AboutPage"
+             xmlns:vm="clr-namespace:TareaApp.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+        <Label Text="Venta de Producto" FontSize="Title" HorizontalOptions="CenterAndExpand" />
+
+        <Label>Codigo de Producto:</Label>
+        <Entry Placeholder="Código de Producto" Text="{Binding Codigo}" />
+
+        <Label>Nombre del Producto:</Label>
+        <Entry Placeholder="Nombre del Producto" Text="{Binding Nombreproducto}" />
+
+        <Label>Costo:</Label>
+        <Entry Placeholder="Costo" Text="{Binding Costo}" />
+
+        <Label>Precio:</Label>
+        <Entry Placeholder="Precio" Text="{Binding Precio}" />
+
+        <Label>Cantidad:</Label>
+        <Entry Placeholder="Cantidad" Text="{Binding Cantidad}" />
+
+        <Label Text="Total: Q{{Binding Total}}" />
+        <Entry Placeholder="Monto Pagado" Text="{Binding Pagado}" />
+
+        <Label Text="Cambio: Q{{Binding Cambio}}" />
+
+        <Button Text="Calcular" Command="{Binding CalculateCommand}" />
+
+        <Label Text="Vuelto: Q{{Binding Cambio}}" IsVisible="{Binding Cambio > 0}" />
+
+    </StackLayout>
+
+</ContentPage>

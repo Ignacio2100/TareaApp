@@ -16,15 +16,13 @@ namespace TareaApp.Views
         double Cambio;
         double resul;
 
-        private void CalcularTotal()
+        private void Calcular()
         {
-            if (!string.IsNullOrEmpty(Precio.Text) && !string.IsNullOrEmpty(Cantidad.Text))
-            {
-                precio = Convert.ToDouble(Precio.Text);
-                cantidad = Convert.ToDouble(Cantidad.Text);
-                resul = precio * cantidad;
-                lbltotal.Text = resul.ToString();
-            }
+            precio = Convert.ToDouble(Precio.Text);
+            cantidad = Convert.ToDouble(Cantidad.Text);
+
+            resul = precio * cantidad;
+            lbltotal.Text = resul.ToString();
         }
 
         private void CalcularCambio()
@@ -39,7 +37,7 @@ namespace TareaApp.Views
                 }
                 else
                 {
-                    DisplayAlert("Error", "El monto pagado debe ser igual o mayor al total.", "OK");
+                    DisplayAlert("Error", "El monto pagado debe ser  mayor al total.", "OK");
                     lblcambio.Text = "0.0";
                 }
             }
@@ -54,7 +52,7 @@ namespace TareaApp.Views
         {
             if (!string.IsNullOrEmpty(Precio.Text))
             {
-                CalcularTotal();
+                Calcular();
                 CalcularCambio();
             }
             else
@@ -63,12 +61,14 @@ namespace TareaApp.Views
             }
         }
 
+        private void btncalcular_Clicked(object sender, EventArgs e)
+        {
+            validar();
+        }
+
         public AboutPage()
         {
             InitializeComponent();
-            // Agregar manejadores de eventos TextChanged a los campos Precio y Cantidad
-            Precio.TextChanged += (sender, e) => CalcularTotal();
-            Cantidad.TextChanged += (sender, e) => CalcularTotal();
         }
     }
 }

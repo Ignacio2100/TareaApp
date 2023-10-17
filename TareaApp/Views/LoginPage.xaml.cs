@@ -17,5 +17,14 @@ namespace TareaApp.Views
             InitializeComponent();
             this.BindingContext = new LoginViewModel();
         }
+        private async void Ejercicio1Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
+
+        private async void Ejercicio2Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ItemsPage());
+        }
     }
 }

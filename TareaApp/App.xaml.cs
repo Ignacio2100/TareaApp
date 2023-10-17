@@ -13,8 +13,9 @@ namespace TareaApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            InitializeComponent();
+
+            MainPage = new NavigationPage(new TareaApp.Views.LoginPage());
         }
 
         protected override void OnStart()

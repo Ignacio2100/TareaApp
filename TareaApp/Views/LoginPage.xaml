@@ -9,7 +9,12 @@
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
             
-            <Button VerticalOptions="Center" Text="Haz Click" Command="{Binding LoginCommand}"/>
+            
+            <Button VerticalOptions="Center" Text="Ejercicio 1" Clicked="Ejercicio1Button_Clicked" />
+
+
+            <Button VerticalOptions="Center" Text="Ejercicio 2" Clicked="Ejercicio2Button_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

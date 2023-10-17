@@ -4,11 +4,11 @@
              x:Class="TareaApp.Views.AboutPage"
              xmlns:vm="clr-namespace:TareaApp.ViewModels"
              Title="{Binding Title}">
-    
+
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d1ff</Color>
@@ -19,28 +19,87 @@
         <Label Text="Venta de Producto" FontSize="Title" HorizontalOptions="CenterAndExpand" />
 
         <Label>Codigo de Producto:</Label>
-        <Entry Placeholder="Código de Producto" Text="{Binding Codigo}" />
+
+        <Entry Keyboard="Text"
+                       Placeholder="Código de Producto"
+                       TextColor="Black"
+                       PlaceholderColor="Blue"
+                       FontSize="Large"
+                       x:Name="Codigo"/>
 
         <Label>Nombre del Producto:</Label>
-        <Entry Placeholder="Nombre del Producto" Text="{Binding Nombreproducto}" />
+        <Entry Keyboard="Text"
+               Placeholder="Nombre del Producto"
+               TextColor="Black"
+               PlaceholderColor="Blue"
+               FontSize="Large"
+               x:Name="nombre"/>
 
         <Label>Costo:</Label>
-        <Entry Placeholder="Costo" Text="{Binding Costo}" />
+        <Entry Keyboard="Numeric"
+        Placeholder="Costo"
+        TextColor="Black"
+        PlaceholderColor="Blue"
+        FontSize="Large"
+        x:Name="Costo"/>
 
         <Label>Precio:</Label>
-        <Entry Placeholder="Precio" Text="{Binding Precio}" />
+        <Entry Keyboard="Numeric"
+        Placeholder="Precio"
+        TextColor="Black"
+        PlaceholderColor="Blue"
+        FontSize="Large"
+        x:Name="Precio"/>
 
         <Label>Cantidad:</Label>
-        <Entry Placeholder="Cantidad" Text="{Binding Cantidad}" />
+        <Entry Keyboard="Numeric"
+        Placeholder="Cantidad"
+        TextColor="Black"
+        PlaceholderColor="Blue"
+        FontSize="Large"
+        x:Name="Cantidad"/>
 
-        <Label Text="Total: Q{{Binding Total}}" />
-        <Entry Placeholder="Monto Pagado" Text="{Binding Pagado}" />
+   
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Total Q."
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"/>
+            <Label Text="0.0"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       x:Name="lbltotal"/>
+        </StackLayout>
 
-        <Label Text="Cambio: Q{{Binding Cambio}}" />
+        <Label>Monto Pagado:</Label>
+        <Entry Keyboard="Numeric"
+         Placeholder=" Monto Pagado"
+        TextColor="Black"
+        PlaceholderColor="Blue"
+        FontSize="Large"
+        x:Name="Pagado"/>
 
-        <Button Text="Calcular" Command="{Binding CalculateCommand}" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Cambio Q."
+               FontSize="Large"
+               FontAttributes="Bold"
+               VerticalOptions="Center"/>
+            <Label Text="0.0"
+               FontSize="Large"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               x:Name="lblcambio"/>
+        </StackLayout>
 
-        <Label Text="Vuelto: Q{{Binding Cambio}}" IsVisible="{Binding Cambio > 0}" />
+        <Button Text="calcular"
+                    CornerRadius="15"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Margin="0,20,0,0"
+                    BackgroundColor="Chocolate"
+                    x:Name="btncalcular"
+                    Clicked="btncalcular_Clicked"/>
 
     </StackLayout>
 

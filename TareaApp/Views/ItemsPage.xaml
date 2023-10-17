@@ -29,7 +29,7 @@
             <Entry Placeholder="Años Trabajados" x:Name="YearsWorkedEntry" />
             <Button Text="Calcular Monto a Prestar" Clicked="CalculateLoanAmount_Clicked" />
 
-            <Label Text="Monto a Prestar: " x:Name="LoanAmountLabel" />
+            <Label Text="Monto a Prestar: Q. " x:Name="LoanAmountLabel" />
         
         </StackLayout>
     </RefreshView>

@@ -96,8 +96,7 @@
                     CornerRadius="15"
                     FontSize="Large"
                     FontAttributes="Bold"
-                    Margin="0,20,0,0"
-                    BackgroundColor="Chocolate"
+                  
                     x:Name="btncalcular"
                     Clicked="btncalcular_Clicked"/>
 
